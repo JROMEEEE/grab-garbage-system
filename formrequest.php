@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="https://unpkg.com/mvp.css">
+    <!-- <link rel="stylesheet" href="https://unpkg.com/mvp.css"> -->
     <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
@@ -15,6 +16,7 @@
             <label for="">Full Name:</label>
             <input type="text" class="form-control m-t-4" name="fullname" id="" placeholder="Enter Full Name:" required>
                 <br>        
+                <br>
             <label for="">Address:</label>
             <input type="text" class="form-control m-t-4" name="address" id="" placeholder="Enter Address:" required>
                 <br>
@@ -43,12 +45,10 @@
 
             <input type="submit" class="btn btn-primary mt-4" value="Send" name="submit">
         </form>
-
         <!--Go back to Menu-->
         <form action="index.html" method="post">
             <button type="submit">Redirect to Menu</button>
         </form>
-
         </div>
 </body>
 </html>

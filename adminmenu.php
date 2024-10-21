@@ -12,6 +12,10 @@
 </head>
 <body>
     <div class = "container">
+    <!-- <link rel="stylesheet" href="https://unpkg.com/mvp.css"> -->
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
     <h1>Database Center</h1>
     <table>
         <thead>
