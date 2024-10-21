@@ -1,0 +1,32 @@
+h1 {
+  margin: 0 0 20px 0;
+}
+  
+  .container {
+    max-width: 100%;
+    margin-top: 50px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }   
+  
+  .table-container {
+    overflow-x: auto;
+  }
+  
+  .table {  
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+  }
+  
+  .text-center {
+    text-align: center;
+  }
