@@ -1,7 +1,7 @@
 <?php include('dbconnect.php'); ?>
 
 <?php 
-
+    // Delete DB function
     if(isset($_GET['id'])){
         $id = $_GET['id'];
         $query = "DELETE FROM `user_detail` WHERE `user_detail`.`request_id` = '$id'";

@@ -65,8 +65,10 @@
     ?>
 
     </div>
-    <form action="index.html" method="get">
-            <button type="submit">Redirect to Main Menu</button>
-        </form>
+    
+    <!--Go back to Menu-->
+    <form action="index.html" method="post">
+        <button type="submit">Redirect to Menu</button>
+    </form>
 </body>
 </html>

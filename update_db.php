@@ -1,7 +1,7 @@
 <?php include('dbconnect.php');?>
 
 <?php
-
+// Update DB function
     if(isset($_GET['id'])){
         $id = $_GET['id'];
 
@@ -59,6 +59,7 @@
         
         ?>
 
+        <!-- Update Form w/ set placeholder-->
         <form action="update_db.php?id_new=<?php echo $id; ?>" method="post">
 
             <h3>Request ID: <?php echo $row['request_id']; ?></h3>

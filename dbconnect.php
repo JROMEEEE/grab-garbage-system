@@ -1,5 +1,5 @@
 <?php
-
+// DATABASE CONNECTION
 define("HOST", "localhost");
 define("USERNAME", "root");
 define("PASS", "");

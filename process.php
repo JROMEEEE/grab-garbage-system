@@ -7,8 +7,10 @@ $phone = $_POST["phonenumber"];
 $garbageType = $_POST["garbagetype"];
 $date = $_POST["collectiondate"];
 
+// Check if the form was submitted
 if($_SERVER["REQUEST_METHOD"]=="POST"){
 
+    // Check if date is Sat/Sun
     $collectionTimestamp = strtotime($date);
 
     if (!$collectionTimestamp) {
@@ -26,6 +28,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
     $query = "insert into `user_detail` (user_fullname, user_address, user_phonenumber, garbage_type, request_date) values ('$name', '$address', '$phone', '$garbageType', '$date')";
     $result = mysqli_query($connection, $query);
 
+    // Mail Function
     if(!$result){
         die("Query failed: ".mysqli_error($connection));
     } else {
@@ -51,6 +54,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
         );
         $headersString = implode("\r\n", $headers);
 
+        // Mail Function Sending
         if(mail($to, $subject, $message, $headersString)){
             header('Location: formrequest.php?update_msgform=Request Sent!');
             exit;
