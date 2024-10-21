@@ -6,11 +6,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Menu</title>
-    <link rel="stylesheet" href="https://unpkg.com/mvp.css">
+    <!-- <link rel="stylesheet" href="https://unpkg.com/mvp.css"> -->
     <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
-    <div class='container'>
     <h1>Database Center</h1>
     <table>
         <thead>
@@ -64,8 +63,7 @@
         }
     ?>
 
-    </div>
-    
+
     <!--Go back to Menu-->
     <form action="index.html" method="post">
         <button type="submit">Redirect to Menu</button>

@@ -23,11 +23,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Menu</title>
-    <link rel="stylesheet" href="https://unpkg.com/mvp.css">
+    <!-- <link rel="stylesheet" href="https://unpkg.com/mvp.css"> -->
     <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
-    <div class='container'>
     <h1>Edit Request</h1>
     <label for="">Enter Details:</label>
 
@@ -81,9 +80,7 @@
         </form>
 
         <form action="adminmenu.php" method="get">
-            <button type="submit">Redirect to Menu</button>
+            <button type="submit">Redirect to Admin Menu</button>
         </form>
-
-    </div>
 </body>
 </html>
