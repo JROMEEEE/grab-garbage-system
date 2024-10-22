@@ -29,13 +29,14 @@
                 <br>
 
             <?php
-            // ERROR HANDLING
+            // UPDATE MESSAGE
                 if(isset($_GET['update_msgform'])){
                     echo "<h4>".$_GET['update_msgform']."</h4>";
                 }
             ?>
 
             <?php
+            // ERROR MESSAGE
                 if(isset($_GET['error_msgform'])){
                     echo "<h4>".$_GET['error_msgform']."</h4>";
                 }

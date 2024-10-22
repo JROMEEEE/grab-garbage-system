@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+.small-form input {
+  width: 200px;
+}
+
 .container {
   max-width: 900px;
   margin: 100px auto;
@@ -54,7 +58,6 @@ button {
 .container input[type="submit"] {
   color: #fff; /* replace with your desired color */
 }
-
 
 :root {
   --active-brightness: 0.85;
