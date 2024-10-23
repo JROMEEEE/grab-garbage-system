@@ -2,7 +2,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Times New Roman', serif;
 }
 
 .small-form input {
@@ -53,11 +52,11 @@ button {
 .container button {
   display: block;
   margin: 0 auto;
-  margin-bottom: 20px; /* add a margin to the bottom of each button */
+  margin-bottom: 20px;
 } 
 
 .container input[type="submit"] {
-  color: #fff; /* replace with your desired color */
+  color: #fff;
 }
 
 :root {
