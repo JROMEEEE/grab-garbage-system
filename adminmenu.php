@@ -1,8 +1,8 @@
 <?php
 session_start();
-include('dbconnect.php'); // Include database connection
+include('dbconnect.php');
 
-if(!isset($_SESSION['username'])) {
+if(!isset($_SESSION['username'])) { // CHECK IF USER IS LOGGED IN
     header('Location: login.php');
 }
 
@@ -35,7 +35,7 @@ if(!isset($_SESSION['username'])) {
             </thead>
             <tbody>
                 <?php
-                    // Fetch user details
+                    // FETCH USER DATA
                     $query = 'SELECT * FROM `user_detail`';
                     $result = mysqli_query($connection, $query);
 
@@ -45,6 +45,7 @@ if(!isset($_SESSION['username'])) {
                         while ($row = mysqli_fetch_assoc($result)) {
                             ?>
                             <tr>
+                                <!-- PRINT DATA -->
                                 <td><?php echo $row['request_id']; ?></td>
                                 <td><?php echo $row['user_fullname']; ?></td>
                                 <td><?php echo $row['user_address']; ?></td>
@@ -62,24 +63,25 @@ if(!isset($_SESSION['username'])) {
         </table>
 
         <?php
-            // Display update message if set
+            // DISPLAY UPDATE MESSAGE
             if (isset($_GET['update_msg'])) {
                 echo "<h4>" . $_GET['update_msg'] . "</h4>";
             }
 
-            // Display delete message if set
+            // DISPLAY DELETE MESSAGE
             if (isset($_GET['delete_msg'])) {
                 echo "<h4>" . $_GET['delete_msg'] . "</h4>";
             }
         ?>
         
-        <!-- Go back to Menu -->
+        <!-- GO BACK TO MENU -->
         <form action="index.html" method="post">
             <button type="submit">Redirect to Menu</button>
         </form>
     </div>
+    <!-- LOGOUT OF SESSION -->
     <form action="logout.php" method="post">
-            <button type="submit">Logout</button>
-        </form>
+        <button type="submit">Logout</button>
+    </form>
 </body>
 </html>

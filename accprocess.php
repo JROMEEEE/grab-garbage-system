@@ -60,16 +60,16 @@
             $to = "grabmygarbageproj@gmail.com";
             $subject = "New Admin Account Register Request";
             $message = "A new admin account has been registered.\n\n";
-            // "." concatinates variables
+            // "." CONCAT ALL VARIABLES
             $message .= "Username: $username\n";
             $message .= "Email: $email\n";
             $message .= "Admin Code: $admin_code\n";
         
-            // Email headers
+            // EMAIL HEADER
             $headers = "From: no-reply@yourdomain.com\r\n";
             $headers .= "Reply-To: $email\r\n";
         
-            // Send the email
+            // SEND EMAIL
             if (mail($to, $subject, $message, $headers)) {
                 header('Location: register.php?update_msgform=Account Registered! Please wait for admin approval.');;
             } else {

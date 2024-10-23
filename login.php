@@ -1,6 +1,6 @@
 <?php
 session_start();
-if(isset($_SESSION['username'])) {
+if(isset($_SESSION['username'])) { // CHECK IF USER IS LOGGED IN
     header('Location: adminmenu.php');
 }
 ?>
