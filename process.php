@@ -28,34 +28,47 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
     $query = "insert into `user_detail` (user_fullname, user_address, user_phonenumber, garbage_type, request_date) values ('$name', '$address', '$phone', '$garbageType', '$date')";
     $result = mysqli_query($connection, $query);
 
-    // Mail Function
     if(!$result){
         die("Query failed: ".mysqli_error($connection));
     } else {
-        $id = mysqli_insert_id($connection);
+        // $id = mysqli_insert_id($connection);
 
-        $to = 'grabmygarbageproj@gmail.com';
+        // $to = 'grabmygarbageproj@gmail.com';
+        // $subject = "Grab my Garbage Request!";
+        // $messageLines = array(
+        //     "Name: $name",
+        //     "Address: $address",
+        //     "Phone Number: $phone",
+        //     "Garbage Type: $garbageType",
+        //     "Collection Date: $date",
+        //     "Request ID: $id"
+        // );
+        // $message = implode("\n", $messageLines);
+
+        // $headers = array(
+        //     "From: grabmygarbageproj@gmail.com",
+        //     "Reply-To: grabmygarbageproj@gmail.com",
+        //     "MIME-Version: 1.0",
+        //     "Content-Type: text/plain; charset=UTF-8"
+        // );
+        // $headersString = implode("\r\n", $headers);
+
+        // ASSIGN VALUES TO MAIL
+        $to = "grabmygarbageproj@gmail.com";
         $subject = "Grab my Garbage Request!";
-        $messageLines = array(
-            "Name: $name",
-            "Address: $address",
-            "Phone Number: $phone",
-            "Garbage Type: $garbageType",
-            "Collection Date: $date",
-            "Request ID: $id"
-        );
-        $message = implode("\n", $messageLines);
+        $message = "A new request has been submitted!.\n\n";
+        $message .= "Name: $name\n";
+        $message .= "Address: $address\n";
+        $message .= "Phone Number: $phone\n";
+        $message .= "Garbage Type: $garbageType\n";
+        $message .= "Collection Date: $date\n";
+        $message .= "Request ID: $id\n";
 
-        $headers = array(
-            "From: grabmygarbageproj@gmail.com",
-            "Reply-To: grabmygarbageproj@gmail.com",
-            "MIME-Version: 1.0",
-            "Content-Type: text/plain; charset=UTF-8"
-        );
-        $headersString = implode("\r\n", $headers);
+        $headers = "From: no-reply@yourdomain.com\r\n";
+        $headers .= "Reply-To: $email\r\n";
 
         // Mail Function Sending
-        if(mail($to, $subject, $message, $headersString)){
+        if(mail($to, $subject, $message, $headers)){
             header('Location: formrequest.php?update_msgform=Request Sent!');
             exit;
         } else {
