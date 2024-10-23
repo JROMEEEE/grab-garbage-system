@@ -43,6 +43,8 @@ if(isset($_SESSION['username'])) { // CHECK IF USER IS LOGGED IN
         </form>
     </div>
     <form action="adminmenu.php" method="post">
+      
+        <form action="adminmenu.php" method="post">
             <button type="submit">Go to Admin Menu</button>
         </form>
 </body>

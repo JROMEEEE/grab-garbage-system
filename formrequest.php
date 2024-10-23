@@ -21,6 +21,18 @@
             <input type="text" class="form-control m-t-4" name="phonenumber" id="" placeholder="Enter Phone Number:" required>
             <label for="">Garbage Type:</label>
             <input type="text" class="form-control m-t-4" name="garbagetype" id="" placeholder="Describe Garbage Type:" required>
+            <input type="text" class="form-control m-t-4" name="fullname" id="" placeholder="Enter Full Name:" required>
+                <br>        
+                <br>
+            <label for="">Address:</label>
+            <input type="text" class="form-control m-t-4" name="address" id="" placeholder="Enter Address:" required>
+                <br>
+            <label for="">Phone Number:</label>
+            <input type="text" class="form-control m-t-4" name="phonenumber" id="" placeholder="Enter Phone Number:" required>
+                <br>
+            <label for="">Garbage Type:</label>
+            <input type="text" class="form-control m-t-4" name="garbagetype" id="" placeholder="Describe Garbage Type:" required>
+                <br>
             <label for="">Collection Date and Time (Closed on Saturday & Sunday):</label>
             <input type="date" class="form-control m-t-4" name="collectiondate" id="" placeholder="Collection Date:" required>
                 <br>

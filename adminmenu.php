@@ -38,6 +38,29 @@ if(!isset($_SESSION['username'])) { // CHECK IF USER IS LOGGED IN
                     // FETCH USER DATA
                     $query = 'SELECT * FROM `user_detail`';
                     $result = mysqli_query($connection, $query);
+    <div class = "container">
+    <!-- <link rel="stylesheet" href="https://unpkg.com/mvp.css"> -->
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <h1>Database Center</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Full Name</th>
+                <th>Address</th>
+                <th>Phone Number</th>
+                <th>Garbage Type</th>
+                <th>Collection Date</th>
+                <th>Update</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php
+                $query = 'select * from `user_detail`';
+                $result = mysqli_query($connection, $query);
 
                     if (!$result) {
                         die("Query failed: " . mysqli_error($connection));
