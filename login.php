@@ -12,6 +12,8 @@
         <h1>Login</h1>
 
 
+        <p>Don't have an account? <a href="register.php">Go register</a></p>
+
         <form action="index.html" method="post">
             <button type="submit">Redirect to Menu</button>
         </form>

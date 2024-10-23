@@ -10,21 +10,33 @@
 <body>
     <div class="container">
         <?php
-            // print_r($_POST);
-            if (isset($_POST["submit"])) {
-                $username = $_POST["username"];
-                $password = $_POST["password"];
-                $email = $_POST["email"];
-                $repeat_password = $_POST["repeat_password"];
-              
-                if ($password !== $repeat_password) {
-                  header('Location: register.php?error_msgform=Invalid Input! Passwords do not match.');
-                  exit;
-                }
-              }
-        ?>
+        //     // print_r($_POST);
+        //     if (isset($_POST["submit"])) {
+        //         $username = $_POST["username"];
+        //         $password = $_POST["password"];
+        //         $email = $_POST["email"];
+        //         $repeat_password = $_POST["repeat_password"];
+
+        //         if (strlen($password) < 8) {
+        //             header('Location: register.php?error_msgform=Invalid Input! Password must be at least 8 characters long.');
+        //             exit;
+        //         }
+                
+        //         // CHECK IF PASSWORDS MATCH
+        //         if ($password !== $repeat_password) {
+        //           header('Location: register.php?error_msgform=Invalid Input! Passwords do not match.');
+        //           exit;
+        //         }
+
+        //         // CHECK IF EMAIL IS VALID
+        //         if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        //             header('Location: register.php?error_msgform=Invalid Input! Please enter a valid email address.');
+        //             exit;
+        //         }
+        //     }
+        // ?>
         <h1>Register Admin Account</h1>
-        <form action="" method = "post">
+        <form action="accprocess.php" method = "post">
             <!-- USERNAME -->
             <input type="text" class="form-control" name="username" placeholder="Enter new username: " required>
             <!-- EMAIL -->
@@ -32,8 +44,7 @@
             <!-- PASSWORD -->
             <input type="password" class="form-control" name="password" placeholder="Enter new password: " required>
             <input type="password" class="form-control" name="repeat_password" placeholder="Repeat new password: " required>
-            <!-- ADMIN CODE FOR VERIFICATION -->
-            <!-- <input type="text" class="form-control" name="admincode" placeholder="Enter given admin code: "> -->
+
             <?php
                 if (isset($_GET["error_msgform"])) {
                     $error_msgform = $_GET["error_msgform"];
