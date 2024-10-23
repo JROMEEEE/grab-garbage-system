@@ -23,12 +23,12 @@
 
         $query = "SELECT * FROM adminacc_detail WHERE username = ?";
         $stmt = mysqli_prepare($connection, $query);
-        mysqli_stmt_bind_param($stmt, 's', $username);
-        mysqli_stmt_execute($stmt);
-        mysqli_stmt_store_result($stmt);
+        mysqli_stmt_bind_param($stmt, 's', $username); // PREVENT SQL INJECTION BY BINDING PARAMETERS
+        mysqli_stmt_execute($stmt); // EXECUTE BINDED STATEMENT
+        mysqli_stmt_store_result($stmt); // STORE RESULT OF STATEMENT
 
         // CHECK USERNAME IF IT EXISTS
-        if (mysqli_stmt_num_rows($stmt) > 0) {
+        if (mysqli_stmt_num_rows($stmt) > 0) { // CHECK IF ROWS RETURNED ARE GREATER THAN 0
             header('Location: register.php?error_msgform=Username already exists please choose another one.');
             exit;
         }
