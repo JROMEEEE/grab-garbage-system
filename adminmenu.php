@@ -1,5 +1,11 @@
-<?php 
+<?php
+session_start();
 include('dbconnect.php'); // Include database connection
+
+if(!isset($_SESSION['username'])) {
+    header('Location: login.php');
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -72,5 +78,8 @@ include('dbconnect.php'); // Include database connection
             <button type="submit">Redirect to Menu</button>
         </form>
     </div>
+    <form action="logout.php" method="post">
+            <button type="submit">Logout</button>
+        </form>
 </body>
 </html>
