@@ -1,13 +1,35 @@
 <?php
+    include('dbconnect.php');
+
+    $username = $_POST["username"];
+    $password = $_POST["password"];
+    $email = $_POST["email"];
+    $repeat_password = $_POST["repeat_password"];
+
+    $passwordhash = password_hash($password, PASSWORD_DEFAULT);
+
     if (isset($_POST["submit"])) {
-        $username = $_POST["username"];
-        $password = $_POST["password"];
-        $email = $_POST["email"];
-        $repeat_password = $_POST["repeat_password"];
-    
         // PASSWORDS MUST MATCH
         if ($password !== $repeat_password) {
             header('Location: register.php?error_msgform=Passwords do not match.');
+            exit;
+        }
+
+        // CHECK USERNAME DOES NOT CONTAIN WHITESPACES
+        if (strpos($username, ' ') !== false) {
+            header('Location: register.php?error=Username cannot contain spaces.');
+            exit;
+        }
+
+        $query = "SELECT * FROM adminacc_detail WHERE username = ?";
+        $stmt = mysqli_prepare($connection, $query);
+        mysqli_stmt_bind_param($stmt, 's', $username);
+        mysqli_stmt_execute($stmt);
+        mysqli_stmt_store_result($stmt);
+
+        // CHECK USERNAME IF IT EXISTS
+        if (mysqli_stmt_num_rows($stmt) > 0) {
+            header('Location: register.php?error_msgform=Username already exists please choose another one.');
             exit;
         }
     
@@ -25,26 +47,34 @@
     
         // GENERATE ADMIN CODE USE SUBSTR TO SELECT PART OF GIVEN STRING AND STR SHUFFLE TO RANDOMIZE FROM POINT 0 TO POINT 6
         $admin_code = substr(str_shuffle('ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'), 0, 6);
-    
-        // EMAIL CONTENT
-        $to = "grabmygarbageproj@gmail.com";
-        $subject = "New Admin Account Register Request";
-        $message = "A new admin account has been registered.\n\n";
-        // "." concatinates variables
-        $message .= "Username: $username\n";
-        $message .= "Email: $email\n";
-        $message .= "Admin Code: $admin_code\n";
-    
-        // Email headers
-        $headers = "From: no-reply@yourdomain.com\r\n";
-        $headers .= "Reply-To: $email\r\n";
-    
-        // Send the email
-        if (mail($to, $subject, $message, $headers)) {
-            header('Location: register.php?update_msgform=Request Sent!');;
+
+        $query = "INSERT INTO adminacc_detail (username, password, email, admincode) VALUES (?, ?, ?, ?)";
+        $stmt = mysqli_prepare($connection, $query);
+        mysqli_stmt_bind_param($stmt, 'ssss', $username, $passwordhash, $email, $admin_code);
+        $result = mysqli_stmt_execute($stmt);
+
+        if(!$result){
+            die("Query failed: ".mysqli_error($connection));
         } else {
-            echo 'Location: register.php?error_msgform=Unexpected Error. Please try again.';
+            // EMAIL CONTENT
+            $to = "grabmygarbageproj@gmail.com";
+            $subject = "New Admin Account Register Request";
+            $message = "A new admin account has been registered.\n\n";
+            // "." concatinates variables
+            $message .= "Username: $username\n";
+            $message .= "Email: $email\n";
+            $message .= "Admin Code: $admin_code\n";
+        
+            // Email headers
+            $headers = "From: no-reply@yourdomain.com\r\n";
+            $headers .= "Reply-To: $email\r\n";
+        
+            // Send the email
+            if (mail($to, $subject, $message, $headers)) {
+                header('Location: register.php?update_msgform=Account Registered! Please wait for admin approval.');;
+            } else {
+                echo 'Location: register.php?error_msgform=Unexpected Error. Please try again.';
+            }
         }
-    
     }
 ?>

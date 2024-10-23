@@ -46,6 +46,14 @@
             <input type="password" class="form-control" name="repeat_password" placeholder="Repeat new password: " required>
 
             <?php
+            // UPDATE MESSAGE
+                if(isset($_GET['update_msgform'])){
+                    echo "<h4>".$_GET['update_msgform']."</h4>";
+                }
+            ?>
+
+            <?php
+            // ERROR MESSAGE
                 if (isset($_GET["error_msgform"])) {
                     $error_msgform = $_GET["error_msgform"];
                     echo "<div class='error-message'>$error_msgform</div>";

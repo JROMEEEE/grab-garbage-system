@@ -55,8 +55,8 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
 
         // ASSIGN VALUES TO MAIL
         $to = "grabmygarbageproj@gmail.com";
-        $subject = "New Admin Account Register Request";
-        $message = "A new admin account has been registered.\n\n";
+        $subject = "Grab my Garbage Request!";
+        $message = "A new request has been submitted!.\n\n";
         $message .= "Name: $name\n";
         $message .= "Address: $address\n";
         $message .= "Phone Number: $phone\n";
