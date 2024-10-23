@@ -49,6 +49,7 @@
             // UPDATE MESSAGE
                 if(isset($_GET['update_msgform'])){
                     echo "<h4>".$_GET['update_msgform']."</h4>";
+                    echo "<h4>Click <a href='login.php'>here</a> to login.</h4>";
                 }
             ?>
 

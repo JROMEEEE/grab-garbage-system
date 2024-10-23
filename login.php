@@ -17,6 +17,10 @@
         <form action="index.html" method="post">
             <button type="submit">Redirect to Menu</button>
         </form>
+      
+        <form action="adminmenu.php" method="post">
+            <button type="submit">Go to Admin Menu</button>
+        </form>
     </div>
 </body>
 </html>

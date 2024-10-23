@@ -84,12 +84,3 @@ button {
   --width-card-wide: 800px;
   --width-content: 1080px;
 }
- 
-  font-family: 'Times New Roman', serif;
-  font-size: 1.2rem;
-  color: rgb(12, 6, 6);
-  background-color: rgb(5, 201, 54);
-  border: navajowhite;
-  border-radius: 5px;
-
-}

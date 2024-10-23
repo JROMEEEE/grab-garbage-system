@@ -35,7 +35,6 @@
 <body>
     <h1>Edit Request</h1>
     <label for="">Enter Details:</label>
-
         <?php 
         
         if(isset($_POST['update_request'])){
@@ -65,10 +64,11 @@
 
         <!-- Update Form w/ set placeholder-->
         <form action="update_db.php?id_new=<?php echo $id; ?>" method="post">
+            <h3>Request ID: <?php echo $row['request_id']; ?></h3>
+            <br>
             <h3>Requester ID: <?php echo $row['request_id']; ?></h3>
             <br>
             <h3>Request ID: <?php echo $row['request_id']; ?></h3>
-
             <input type="text" class="form-control m-t-4" name="fullname" id="" placeholder="Full Name:" value="<?php echo $row['user_fullname'];?>" required>
             <br>
             <input type="text" class="form-control m-t-4" name="address" id="" placeholder="Address:" value="<?php echo $row['user_address']?>" required>
