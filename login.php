@@ -1,7 +1,25 @@
 <?php
 session_start();
+
+$timeout_duration = 900;
+
+if (isset($_SESSION['LAST_ACTIVITY'])) {
+    $elapsed_time = time() - $_SESSION['LAST_ACTIVITY'];
+
+    if ($elapsed_time > $timeout_duration) {
+        // LOG OUT IF EXCEEDS GIVEN TIME
+        session_unset(); // UNSET SESSION
+        session_destroy();
+        header('Location: login.php?session_expired=1');
+        exit();
+    }
+}
+
+$_SESSION['LAST_ACTIVITY'] = time();
+
 if(isset($_SESSION['username'])) { // CHECK IF USER IS LOGGED IN
     header('Location: adminmenu.php');
+    exit;
 }
 ?>
 
@@ -32,6 +50,11 @@ if(isset($_SESSION['username'])) { // CHECK IF USER IS LOGGED IN
                     $error_msgform = $_GET["error_msgform"];
                     echo "<div class='error-message'>$error_msgform</div>";
                 }
+
+                if (isset($_GET['session_expired']) && $_GET['session_expired'] == 1) {
+                    echo "<div class='error-message'>Your session has expired. Please log in again.</div>";
+                }
+    
             ?>
 
         </form>
