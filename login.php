@@ -43,7 +43,7 @@ if(isset($_SESSION['username'])) { // CHECK IF USER IS LOGGED IN
             </a>
             <ul class="navbar-nav flex-row flex-wrap bd-navbar-nav">
             <li nav-item col-6 col-lg-auto>
-                <a class="navbar-brand d-flex align-items-center" href="#request">Request Pickup</a>
+                <a class="navbar-brand d-flex align-items-center" href="index.php#request">Request Pickup</a>
             </li>
             <li nav-item col-6 col-lg-auto>
                 <a class="navbar-brand d-flex align-items-center" href="login.php">Admin Menu</a>
@@ -51,36 +51,40 @@ if(isset($_SESSION['username'])) { // CHECK IF USER IS LOGGED IN
         </div>
     </nav>
 
-    <div class = "container">
-        <h1>Login</h1>
+    <div class = "container p-5 w-50">
+        <h1 class="display-2 text-center mb-5">Login</h1>
 
         <!-- LOGIN FORM -->
         <form action="loginprocess.php" method="post">
-
-        <input type="text" class="form-control" name="username" placeholder="Enter username: " required>
-        <input type="password" class="form-control" name="password" placeholder="Enter password: " required>
-        <input type="text" class="form-control" name="admincode" placeholder="Enter admin code: " required>
-        <input type="submit" value="Login" name="submit">
+        <input type="text" class="form-control mb-3" name="username" placeholder="Enter username: " required>
+        <input type="password" class="form-control mb-3" name="password" placeholder="Enter password: " required>
+        <input type="text" class="form-control mb-3" name="admincode" placeholder="Enter admin code: " required>
 
         <?php
             // ERROR MESSAGE
                 if (isset($_GET["error_msgform"])) {
                     $error_msgform = $_GET["error_msgform"];
-                    echo "<div class='error-message'>$error_msgform</div>";
+                    echo "<div class='error-message mb-3'>$error_msgform</div>";
                 }
 
                 if (isset($_GET['session_expired']) && $_GET['session_expired'] == 1) {
-                    echo "<div class='error-message'>Your session has expired. Please log in again.</div>";
+                    echo "<div class='error-message mb-3'>Your session has expired. Please log in again.</div>";
                 }
     
-            ?>
+        ?>
+
+        <input type="submit" class="btn btn-primary" value="Login" name="submit">
 
         </form>
-
-        <p>Don't have an account? <a href="register.php">Go register</a></p>
+        
+        <div class="container text-center mt-3">
+        <p class="lead">Don't have an account? <a href="register.php">Go register</a></p>
+        </div>
 
         <form action="index.php" method="post">
-            <button type="submit">Redirect to Menu</button>
+            <div class="container text-center mt-4">
+                <button type="submit" class="btn btn-primary">Redirect to Menu</button>
+            </div>
         </form>
     </div>
 </body>

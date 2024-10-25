@@ -18,7 +18,7 @@
             </a>
             <ul class="navbar-nav flex-row flex-wrap bd-navbar-nav">
             <li nav-item col-6 col-lg-auto>
-                <a class="navbar-brand d-flex align-items-center" href="#request">Request Pickup</a>
+                <a class="navbar-brand d-flex align-items-center" href="index.php#request">Request Pickup</a>
             </li>
             <li nav-item col-6 col-lg-auto>
                 <a class="navbar-brand d-flex align-items-center" href="login.php">Admin Menu</a>
@@ -26,42 +26,19 @@
         </div>
     </nav>
 
-    <div class="container">
-        <?php
-        //     // print_r($_POST);
-        //     if (isset($_POST["submit"])) {
-        //         $username = $_POST["username"];
-        //         $password = $_POST["password"];
-        //         $email = $_POST["email"];
-        //         $repeat_password = $_POST["repeat_password"];
-
-        //         if (strlen($password) < 8) {
-        //             header('Location: register.php?error_msgform=Invalid Input! Password must be at least 8 characters long.');
-        //             exit;
-        //         }
-                
-        //         // CHECK IF PASSWORDS MATCH
-        //         if ($password !== $repeat_password) {
-        //           header('Location: register.php?error_msgform=Invalid Input! Passwords do not match.');
-        //           exit;
-        //         }
-
-        //         // CHECK IF EMAIL IS VALID
-        //         if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        //             header('Location: register.php?error_msgform=Invalid Input! Please enter a valid email address.');
-        //             exit;
-        //         }
-        //     }
-        // ?>
-        <h1>Register Admin Account</h1>
+    <div class="container p-5 w-50">
+        <h1 class="display-4 text-center mb-5">Register Admin Account</h1>
         <form action="accprocess.php" method = "post">
             <!-- USERNAME -->
-            <input type="text" class="form-control" name="username" placeholder="Enter new username: " required>
+            <input type="text" class="form-control mb-3" name="username" placeholder="Enter new username: " required>
             <!-- EMAIL -->
-            <input type="text" class="form-control" name="email" placeholder="Enter email: " required>
+            <input type="text" class="form-control mb-3" name="email" placeholder="Enter email: " required>
             <!-- PASSWORD -->
-            <input type="password" class="form-control" name="password" placeholder="Enter new password: " required>
-            <input type="password" class="form-control" name="repeat_password" placeholder="Repeat new password: " required>
+            <input type="password" class="form-control" name="password" placeholder="Enter new password: " required aria-describedby="helppassword">
+            <div id="helppassword" class="mb-3">
+                    <small>Password must be at least 8 characters long.</small>
+                  </div> 
+            <input type="password" class="form-control mb-3" name="repeat_password" placeholder="Repeat new password: " required>
 
             <?php
             // UPDATE MESSAGE
@@ -79,13 +56,17 @@
                 }
             ?>
             <br>
-            <input type="submit" value="Register" name="submit">    
+            <input type="submit" class="btn btn-primary" value="Register" name="submit">    
         </form>
         
-        <p>Do you have an account? <a href="login.php">Go login</a></p>
+        <div class="container text-center mt-3">
+        <p class="lead">Do you have an account? <a href="login.php">Go login</a></p>
+        </div>
     
-    <form action="index.php" method="post">
-            <button type="submit">Redirect to Menu</button>
+        <form action="index.php" method="post">
+            <div class="container text-center mt-4">
+                <button type="submit" class="btn btn-primary">Redirect to Menu</button>
+            </div>  
         </form>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>

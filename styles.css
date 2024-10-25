@@ -2,9 +2,13 @@
   scroll-behavior: smooth;
 }
 
+body {
+  background-color: #fefee3;
+}
+
 .btn-primary {
-  background-color: #7cb518 !important; /* Custom primary color */
-  border-color: #7cb518 !important; /* Custom border color */
+  background-color: #7cb518 !important;
+  border-color: #7cb518 !important;
 }
 
 .btn-primary:hover {
@@ -12,13 +16,17 @@
 }
 
 .custom-navbar {
-  background-color: #5c8001; /* Custom background color */
+  background-color: #5c8001;
 }
 
 .custom-navbar .navbar-brand {
-  color: white; /* Set the text color */
+  color: #fefee3;
 }
 
 .custom-navbar .navbar-brand:hover {    
-  color: #f3de2c; /* Text color on hover */
+  color: #f3de2c;
+}
+
+.bg-primary {
+  background-color: #538d22 !important;
 }
