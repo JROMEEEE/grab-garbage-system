@@ -28,11 +28,29 @@ if(isset($_SESSION['username'])) { // CHECK IF USER IS LOGGED IN
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://unpkg.com/mvp.css">
+    <!-- <link rel="stylesheet" href="https://unpkg.com/mvp.css"> -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="styles.css">
     <title>Document</title>
 </head>
 <body>
+
+    <nav class="navbar custom-navbar sticky-top">
+        <div class="container-fluid">
+            <a class="navbar-brand d-flex align-items-center" href="index.php">
+            <img src="assets/logo.png" width="45" height="45" class="d-inline-block align-middle me-2">
+            Grab my Garbage
+            </a>
+            <ul class="navbar-nav flex-row flex-wrap bd-navbar-nav">
+            <li nav-item col-6 col-lg-auto>
+                <a class="navbar-brand d-flex align-items-center" href="#request">Request Pickup</a>
+            </li>
+            <li nav-item col-6 col-lg-auto>
+                <a class="navbar-brand d-flex align-items-center" href="login.php">Admin Menu</a>
+            </li>
+        </div>
+    </nav>
+
     <div class = "container">
         <h1>Login</h1>
 
@@ -61,7 +79,7 @@ if(isset($_SESSION['username'])) { // CHECK IF USER IS LOGGED IN
 
         <p>Don't have an account? <a href="register.php">Go register</a></p>
 
-        <form action="index.html" method="post">
+        <form action="index.php" method="post">
             <button type="submit">Redirect to Menu</button>
         </form>
     </div>
