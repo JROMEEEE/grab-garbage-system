@@ -31,7 +31,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
     if(!$result){
         die("Query failed: ".mysqli_error($connection));
     } else {
-        // $id = mysqli_insert_id($connection);
+        $id = mysqli_insert_id($connection);
 
         // $to = 'grabmygarbageproj@gmail.com';
         // $subject = "Grab my Garbage Request!";

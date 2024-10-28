@@ -27,9 +27,29 @@
       </div>
     </nav>    
 
-    <div class="mainheader">
+    <!-- <div class="mainheader">
       <img src="assets/mainheader.png" alt="assets/mainheader2.png" class="img-fluid w-100 h-100 mb-4" >
-    </div>
+    </div> -->
+
+    <div id="carouselExample" class="carousel slide">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="assets/mainheader.png" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="assets/mainheader2.png" class="d-block w-100" alt="...">
+        </div>
+      </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
 
     <!-- INTRODUCTION -->
     <div class="container p-5 mb-5">
@@ -76,14 +96,14 @@
               <?php
               // UPDATE MESSAGE
                   if(isset($_GET['update_msgform'])){
-                      echo "<h6>".$_GET['update_msgform']."</h6>";
+                      echo "<h6 class='text-white'>".$_GET['update_msgform']."</h6>";
                   }
               ?>
 
               <?php
               // ERROR MESSAGE
                   if(isset($_GET['error_msgform'])){
-                      echo "<h6>".$_GET['error_msgform']."</h6>";
+                      echo "<h6 class='text-white>".$_GET['error_msgform']."</h6>";
                   }
               ?>
 

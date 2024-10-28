@@ -43,8 +43,8 @@
             <?php
             // UPDATE MESSAGE
                 if(isset($_GET['update_msgform'])){
-                    echo "<h4>".$_GET['update_msgform']."</h4>";
-                    echo "<h4>Click <a href='login.php'>here</a> to login.</h4>";
+                    echo "<h4 class = 'lead'>".$_GET['update_msgform']."</h4>";
+                    echo "<h4 class = 'lead'>Click <a href='login.php'>here</a> to login.</h4>";
                 }
             ?>
 
@@ -52,7 +52,7 @@
             // ERROR MESSAGE
                 if (isset($_GET["error_msgform"])) {
                     $error_msgform = $_GET["error_msgform"];
-                    echo "<div class='error-message'>$error_msgform</div>";
+                    echo "<div class='lead error-message'>$error_msgform</div>";
                 }
             ?>
             <br>
@@ -66,7 +66,7 @@
         <form action="index.php" method="post">
             <div class="container text-center mt-4">
                 <button type="submit" class="btn btn-primary">Redirect to Menu</button>
-            </div>  
+            </div>
         </form>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>

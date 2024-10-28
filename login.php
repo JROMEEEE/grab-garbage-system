@@ -64,11 +64,11 @@ if(isset($_SESSION['username'])) { // CHECK IF USER IS LOGGED IN
             // ERROR MESSAGE
                 if (isset($_GET["error_msgform"])) {
                     $error_msgform = $_GET["error_msgform"];
-                    echo "<div class='error-message mb-3'>$error_msgform</div>";
+                    echo "<div class='lead error-message mb-3'>$error_msgform</div>";
                 }
 
                 if (isset($_GET['session_expired']) && $_GET['session_expired'] == 1) {
-                    echo "<div class='error-message mb-3'>Your session has expired. Please log in again.</div>";
+                    echo "<div class='lead error-message mb-3'>Your session has expired. Please log in again.</div>";
                 }
     
         ?>

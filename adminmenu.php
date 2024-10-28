@@ -37,11 +37,11 @@ if(!isset($_SESSION['username'])) { // CHECK IF USER IS LOGGED IN
     </nav>
 
 
-    <div class="container">
-        <h1>Database Center</h1>
-        <table>
+    <div class="container-fluid p-5 justify-content-center w-100">
+        <h1 class="display-4 text-center mb-4">Database Center</h1>
+        <table class="table table-hover table-bordered">
             <thead>
-                <tr>
+                <tr class="text-center">
                     <th>ID</th>
                     <th>Full Name</th>
                     <th>Address</th>
@@ -63,7 +63,7 @@ if(!isset($_SESSION['username'])) { // CHECK IF USER IS LOGGED IN
                     } else {
                         while ($row = mysqli_fetch_assoc($result)) {
                             ?>
-                            <tr>
+                            <tr class="text-center">
                                 <!-- PRINT DATA -->
                                 <td><?php echo $row['request_id']; ?></td>
                                 <td><?php echo $row['user_fullname']; ?></td>
@@ -71,8 +71,8 @@ if(!isset($_SESSION['username'])) { // CHECK IF USER IS LOGGED IN
                                 <td><?php echo $row['user_phonenumber']; ?></td>
                                 <td><?php echo $row['garbage_type']; ?></td>
                                 <td><?php echo $row['request_date']; ?></td>
-                                <td><a href="update_db.php?id=<?php echo $row['request_id']; ?>">Update</a></td>
-                                <td><a href="delete_db.php?id=<?php echo $row['request_id']; ?>">Delete</a></td>
+                                <td><a class="btn btn-warning" href="update_db.php?id=<?php echo $row['request_id']; ?>">Update</a></td>
+                                <td><a class="btn btn-danger" href="delete_db.php?id=<?php echo $row['request_id']; ?>">Delete</a></td>
                             </tr>
                             <?php
                         }
@@ -84,18 +84,20 @@ if(!isset($_SESSION['username'])) { // CHECK IF USER IS LOGGED IN
         <?php
             // DISPLAY UPDATE MESSAGE
             if (isset($_GET['update_msg'])) {
-                echo "<h4>" . $_GET['update_msg'] . "</h4>";
+                echo "<h4 class = 'lead'>" . $_GET['update_msg'] . "</h4>";
             }
 
             // DISPLAY DELETE MESSAGE
             if (isset($_GET['delete_msg'])) {
-                echo "<h4>" . $_GET['delete_msg'] . "</h4>";
+                echo "<h4 class = 'lead'>" . $_GET['delete_msg'] . "</h4>";
             }
         ?>
         
         <!-- GO BACK TO MENU -->
         <form action="index.php" method="post">
-            <button type="submit">Redirect to Menu</button>
+            <div class="container text-center mt-4">
+                <button type="submit" class="btn btn-primary">Redirect to Menu</button>
+            </div>  
         </form>
     </div>
     <!-- LOGOUT OF SESSION -->
