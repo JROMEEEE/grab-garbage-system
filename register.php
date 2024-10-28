@@ -21,13 +21,21 @@
                 <a class="navbar-brand d-flex align-items-center" href="index.php#request">Request Pickup</a>
             </li>
             <li nav-item col-6 col-lg-auto>
-                <a class="navbar-brand d-flex align-items-center" href="login.php">Admin Menu</a>
+                <a class="navbar-brand d-flex align-items-center" href="login.php">Volunteer Menu</a>
             </li>
         </div>
     </nav>
 
     <div class="container p-5 w-50">
-        <h1 class="display-4 text-center mb-5">Register Admin Account</h1>
+            <h1 class="display-4 text-center mb-4">Register Volunteer Account</h1>
+            <p class="lead mb-2">Volunteer registration guidelines:</p>
+            <ul>
+            <li class="lead mb-2">To become a volunteer please enter your details below.</li>
+            <li class="lead mb-2">We will be notified of your registration, please wait for confirmation within 1-2 business days.</li>
+            <li class="lead mb-2">Any concerns please contact us at grabgarbageproj@gmail.com</li>
+            </ul>
+
+        <p class="lead"></p>
         <form action="accprocess.php" method = "post">
             <!-- USERNAME -->
             <input type="text" class="form-control mb-3" name="username" placeholder="Enter new username: " required>

@@ -46,7 +46,7 @@ if(isset($_SESSION['username'])) { // CHECK IF USER IS LOGGED IN
                 <a class="navbar-brand d-flex align-items-center" href="index.php#request">Request Pickup</a>
             </li>
             <li nav-item col-6 col-lg-auto>
-                <a class="navbar-brand d-flex align-items-center" href="login.php">Admin Menu</a>
+                <a class="navbar-brand d-flex align-items-center" href="login.php">Volunteer Menu</a>
             </li>
         </div>
     </nav>

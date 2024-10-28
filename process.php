@@ -72,7 +72,11 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
             header('Location: index.php?update_msgform=Request Sent!');
             exit;
         } else {
-            header('Location: index.php?error_msgform=Invalid Input! We are unavailable on Weekends.');
+            // header('Location: index.php?error_msgform=Invalid Input! We are unavailable on Weekends.');
+            // exit;
+
+            error_log("Mail failed to send for Request ID: $id on " . date('Y-m-d H:i:s'), 3, 'mail_errors.log');
+            header('Location: index.php?error_msgform=Request recorded, but email notification failed.');
             exit;
         }
     }
