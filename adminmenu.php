@@ -19,7 +19,6 @@ if(!isset($_SESSION['username'])) { // CHECK IF USER IS LOGGED IN
     <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
-
     <nav class="navbar custom-navbar sticky-top">
         <div class="container-fluid">
             <a class="navbar-brand d-flex align-items-center" href="index.php">
@@ -27,12 +26,13 @@ if(!isset($_SESSION['username'])) { // CHECK IF USER IS LOGGED IN
             Grab my Garbage
             </a>
             <ul class="navbar-nav flex-row flex-wrap bd-navbar-nav">
-            <li nav-item col-6 col-lg-auto>
-                <a class="navbar-brand d-flex align-items-center" href="index.php#request">Request Pickup</a>
-            </li>
-            <li nav-item col-6 col-lg-auto>
-                <a class="navbar-brand d-flex align-items-center" href="login.php">Admin Menu</a>
-            </li>
+                <li>
+                    <a class="navbar-brand d-flex align-items-center" href="accountedit.php">Settings</a>
+                </li>
+                <li nav-item col-6 col-lg-auto>
+                    <a class="navbar-brand d-flex align-items-center" href="index.php">Go Back</a>
+                </li>
+            </ul>
         </div>
     </nav>
 
@@ -100,10 +100,6 @@ if(!isset($_SESSION['username'])) { // CHECK IF USER IS LOGGED IN
             </div>  
         </form>
     </div>
-    <!-- LOGOUT OF SESSION -->
-    <form action="logout.php" method="post">
-        <button type="submit">Logout</button>
-    </form>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
 </html>

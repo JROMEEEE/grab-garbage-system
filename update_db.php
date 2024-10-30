@@ -73,18 +73,22 @@
         }
         
         ?>
-
+ 
         <!-- Update Form w/ set placeholder-->
         <form action="update_db.php?id_new=<?php echo $id; ?>" method="post">
             <h3>Request ID: <?php echo $row['request_id']; ?></h3>
             <br>
 
+            <label for="">Full Name:</label>
             <input type="text" class="form-control m-t-4" name="fullname" id="" placeholder="Full Name:" value="<?php echo $row['user_fullname'];?>" required>
             <br>
+            <label for="">Address:</label>
             <input type="text" class="form-control m-t-4" name="address" id="" placeholder="Address:" value="<?php echo $row['user_address']?>" required>
             <br>
+            <label for="">Phone Number:</label>
             <input type="text" class="form-control m-t-4" name="phonenumber" id="" placeholder="Phone Number:" value="<?php echo $row['user_phonenumber']; ?>" required>
             <br>
+            <label for="">Garbage Type:</label>
             <input type="text" class="form-control m-t-4" name="garbagetype" id="" placeholder="Garbage Type:" value="<?php echo $row['garbage_type']; ?>" required>
             <br>
             
@@ -92,7 +96,7 @@
             <input type="date" class="form-control m-t-4" name="collectiondate" id="" placeholder="Collection Date:" value="<?php echo $row['request_date']; ?>" required>
             <br>
 
-            <input type="submit" class="btn btn-primary mt-4" value="Update" name="update_request">
+            <input type="submit" class="btn btn-primary mt-2" value="Update" name="update_request">
         </form>
 
         <form action="adminmenu.php" method="post">
