@@ -96,7 +96,7 @@
             <input type="date" class="form-control m-t-4" name="collectiondate" id="" placeholder="Collection Date:" value="<?php echo $row['request_date']; ?>" required>
             <br>
 
-            <input type="submit" class="btn btn-primary mt-2" value="Update" name="update_request">
+            <input type="submit" class="btn btn-primary mt-2" value="Save Changes" name="update_request">
         </form>
 
         <form action="adminmenu.php" method="post">

@@ -156,7 +156,6 @@
           <p class="lead text-center mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi blanditiis ratione deleniti, nulla laboriosam esse numquam minus sequi error porro voluptas quia inventore vel quos facere, obcaecati natus ipsa fugit?<br></p>
           <p class="lead text-center mb-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa rerum nobis deserunt natus officia hic magni quo tempore itaque repellat non voluptatem, reprehenderit vitae beatae in minus architecto cum sequi?<br></p>
         </div>
-
     <footer class="bg-primary text-center text-black">
         
     </footer>
