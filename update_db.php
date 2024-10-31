@@ -78,7 +78,6 @@
         <form action="update_db.php?id_new=<?php echo $id; ?>" method="post">
             <h3>Request ID: <?php echo $row['request_id']; ?></h3>
             <br>
-
             <label for="">Full Name:</label>
             <input type="text" class="form-control m-t-4" name="fullname" id="" placeholder="Full Name:" value="<?php echo $row['user_fullname'];?>" required>
             <br>
