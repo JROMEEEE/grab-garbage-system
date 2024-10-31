@@ -1,6 +1,5 @@
-<?php include('dbconnect.php'); ?>
-
 <?php 
+    include('dbconnect.php'); 
     // Delete DB function
     if(isset($_GET['id'])){
         $id = $_GET['id'];
