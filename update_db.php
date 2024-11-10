@@ -1,6 +1,5 @@
-<?php include('dbconnect.php');?>
-
 <?php
+include('dbconnect.php');
 // Update DB function
     if(isset($_GET['id'])){
         $id = $_GET['id'];
@@ -15,6 +14,16 @@
             }
     }
 
+?>
+
+<?php
+    session_start();
+
+    if(!isset($_SESSION['username'])) { // CHECK IF USER IS LOGGED IN
+        header('Location: login.php');
+    }
+
+    $username = $_SESSION['username'];
 ?>
 
 <!DOCTYPE html>
@@ -40,15 +49,14 @@
                     <a class="navbar-brand d-flex align-items-center" href="index.php#request">Request Pickup</a>
                 </li>
                 <li nav-item col-6 col-lg-auto>
-                    <a class="navbar-brand d-flex align-items-center" href="login.php">Admin Menu</a>
+                    <a class="navbar-brand d-flex align-items-center" href="login.php">Volunteer Menu</a>
                 </li>
             </div>
     </nav>
 
     <div class = "container p-5 mb-5">
-    <h1>Edit Request</h1>
+    <h1 class="display-4 text-center mb-4">Edit Request</h1>
         <?php 
-        
         if(isset($_POST['update_request'])){
 
             if(isset($_GET['id_new'])){
@@ -69,16 +77,15 @@
             }else{
                 header('Location: adminmenu.php?update_msg=Sucessfully Updated');
             }
-
         }
         
         ?>
  
         <!-- Update Form w/ set placeholder-->
         <form action="update_db.php?id_new=<?php echo $id; ?>" method="post">
-            <h3>Request ID: <?php echo $row['request_id']; ?></h3>
+            <h3 class="lead">Request ID: <?php echo $row['request_id']; ?></h3>
             <br>
-            <label for="">Full Name:</label>
+            
             <input type="text" class="form-control m-t-4" name="fullname" id="" placeholder="Full Name:" value="<?php echo $row['user_fullname'];?>" required>
             <br>
             <label for="">Address:</label>
