@@ -5,6 +5,8 @@
     if(!isset($_SESSION['username'])) { // CHECK IF USER IS LOGGED IN
         header('Location: login.php');
     }
+
+    $username = $_SESSION['username'];
 ?>
 
 <!DOCTYPE html>
@@ -34,7 +36,6 @@
         <h1 class="display-3 text-center text-white mb-5">Account Settings</h1>
 
         <?php
-            $username = $_SESSION['username'];
             $query = 'SELECT username, email, adminid FROM `adminacc_detail` WHERE username = ?';
         
             if ($stmt = mysqli_prepare($connection, $query)) {
@@ -54,14 +55,26 @@
                     echo '<p class="text-white text-center">Error preparing the query.</p>';
                 }
         ?>
+
+        <?php
+            if (isset($_GET['error_msg'])) {
+                $error_msg = $_GET['error_msg'];
+                echo "<div class='lead error-message mb-3'>$error_msgform</div>";
+            }
+
+            if (isset($_GET['update_msg'])) {
+                $update_msg = $_GET['update_msg'];
+                echo "<div class='lead update-message mb-3'>$update_msgform</div>";
+            }
+        ?>
         <!-- LOGOUT OF SESSION -->
         <form action="logout.php" method="post">
             <button class="btn btn-danger me-md-2 mt-3" type="submit">Logout</button>
         </form>
 
         <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-            <button class="btn btn-primary me-md-2" type="button">Change username</button>
-            <button class="btn btn-primary" type="button">Change password</button>
+            <a class="btn btn-primary me-md-2" type="button" href="update_user.php">Change username</a>
+            <a class="btn btn-primary me-md-2" type="button" href="otpprocess.php">Change password</a>
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
