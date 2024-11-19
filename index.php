@@ -86,7 +86,7 @@
           <h5 class="card-title">Our Mission</h5>
           <p class="card-text">Our platform provides a comprehensive solution to environmental sustainability and waste management, which directly supports SDG 11. Our system promotes garbage pickup easier, encouraging cleaner streets and lessening the impact of garbage dumps. Our platform contributes to waste reduction, assisting cities in becoming more resource-efficient and sustainable.</p>
         </div>
-        <a href="" class="btn btn-primary">Check our Mission</a>
+        <a href="#additional-content" class="btn btn-primary">Check our Mission</a>
       </div>
 
       <div class="card mx-3">
@@ -157,10 +157,12 @@
         </div>
                 
         <!-- ADD CONTENT -->
-        <div class="container p-5 mb-5">
-          <h2 class="display-1 text-center mb-5">Additional Content!<br></h2>
-          <p class="lead text-center mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi blanditiis ratione deleniti, nulla laboriosam esse numquam minus sequi error porro voluptas quia inventore vel quos facere, obcaecati natus ipsa fugit?<br></p>
-          <p class="lead text-center mb-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa rerum nobis deserunt natus officia hic magni quo tempore itaque repellat non voluptatem, reprehenderit vitae beatae in minus architecto cum sequi?<br></p>
+        <div class="container p-5 bg-primary mb-5 w-75 mt-5" id="additional-content">
+        <div id= "additional-content" class="container p-5 mb-5">
+          <h2 class="display-1 text-center text-white mb-5"> Our Mission <br></h2>
+          <p class="lead text-center lead text-white mb-4"> In our community, garbage collectors often face challenges with timely waste collection due to accessibility issues. When garbage accumulates on the roads, it becomes difficult for trucks to navigate and collect waste efficiently, leading to delays, unsanitary conditions, and a negative impact on the environment and public health. </p>
+          <p class="lead text-center lead text-white mb-4"> To address this, our team developed an innovative system that allows users to schedule pickups and input their location directly into our platform. This feature provides garbage collectors with a clear, updated guide on where and when to collect waste, streamlining the process and ensuring timely pickup. </p>
+          <p class="lead text-center lead text-white mb-4"> By improving route efficiency and communication, our system helps keep streets clean, enhances community hygiene, and reduces the likelihood of garbage piling up in public spaces.Our goal is to make waste collection more accessible, organized, and sustainable for everyone in the community.<br></p>
         </div>
     <footer class="bg-primary text-center text-black">
         
