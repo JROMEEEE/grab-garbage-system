@@ -1,17 +1,22 @@
 <?php
-// DATABASE CONNECTION
-define("HOST", "localhost");
-define("USERNAME", "root");
-define("PASS", "");
-define("DB", "grabmygarbagedb");
+class Database {
+    private $host = "localhost";
+    private $db_name = "grabmygarbagedb";
+    private $username = "root";
+    private $password = "";
+    public $conn;
 
-$connection = mysqli_connect(HOST, USERNAME, PASS, DB);
+    public function getConnect() {
+        $this->conn = null;
 
-if(!$connection){
-    die("Connection failed: ".mysqli_connect_error());
-} 
-// else{
-//     echo "Database Connected!";
-// }
+        try {
+            $this->conn = new PDO("mysql:host=" . $this->host . ";dbname=" . $this->db_name, $this->username, $this->password);
+            $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        } catch(PDOException $exception) {
+            echo "Connection error: " . $exception->getMessage();
+        }
 
+        return $this->conn;
+    }
+}
 ?>
