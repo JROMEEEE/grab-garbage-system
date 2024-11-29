@@ -3,15 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Grab my Garbage</title>
-    <!-- <link rel="stylesheet" href="https://unpkg.com/mvp.css">  -->
+    <!-- BOOTSTRAP -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- CSS -->
     <link rel="stylesheet" type="text/css" href="styles.css">
+
+    <title>Grab my Garbage!</title>
 </head>
 <body>
-    <!--MAIN MENU-->
 
-    <nav class="navbar custom-navbar sticky-top">
+<!-- NAVBAR -->
+<nav class="navbar custom-navbar sticky-top">
       <div class="container-fluid">
         <a class="navbar-brand d-flex align-items-center" href="index.php">
           <img src="assets/logo.png" width="45" height="45" class="d-inline-block align-middle me-2">
@@ -22,16 +24,13 @@
             <a class="navbar-brand d-flex align-items-center" href="#request">Request Pickup</a>
           </li>
           <li nav-item col-6 col-lg-auto>
-            <a class="navbar-brand d-flex align-items-center" href="login.php">Volunteer Menu</a>
+            <a class="navbar-brand d-flex align-items-center" href="admin/login.php">Volunteer Menu</a>
           </li>
       </div>
-    </nav>    
+</nav>
 
-    <!-- <div class="mainheader">
-      <img src="assets/mainheader.png" alt="assets/mainheader2.png" class="img-fluid w-100 h-100 mb-4" >
-    </div> -->
-
-    <div id="carouselExample" class="carousel slide">
+<!-- CAROUSEL -->
+<div id="carouselExample" class="carousel slide">
       <div class="carousel-inner">
         <div class="carousel-item active">
           <img src="assets/mainheader.png" class="d-block w-100" alt="...">
@@ -49,17 +48,17 @@
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Next</span>
       </button>
-    </div>
+</div>
 
-    <!-- INTRODUCTION -->
-    <div class="container p-5 mt-3 mb-3">
+<!-- INTRODUCING GRAB MY GARBAGE -->
+<div class="container p-5 mt-3 mb-3">
       <h2 class="display-1 text-center mb-5">Welcome to Grab my Garbage! <br></h2>
       <p class="lead text-center mb-4">Tired of the hassle of hauling your garbage? Grab My Garbage is here to revolutionize waste management. Our innovative system simplifies the process of garbage pickup, saving you time and effort.<br></p>
       <p class="lead text-center">Join us and simplify your lives with Grab My Garbage. Let us transform your waste management routine into a stress-free experience.<br></p>
-    </div>
+</div>
 
-    <!-- SERVICES -->
-    <h1 class="display-1 text-center mb-3" id="services">Our Services:</h1>
+<!-- SERVICES -->
+<h1 class="display-1 text-center mb-3" id="services">Our Services:</h1>
     <div class="card-group p-5">
       <div class="card mx-3">
         <img class="card-img-top" src="assets/card1.png" alt="Card image cap">
@@ -77,7 +76,7 @@
           <h5 class="card-title">Volunteer</h5>
           <p class="card-text">Become a part of our mission to keep our community clean by volunteering to pick up trash and separate the waste in our neighborhood, you can help us maintain a clean community. You may reduce waste, encourage sustainability, and directly affect the environment with this practical opportunity. Everyone may enjoy a cleaner, healthier environment.</p>
         </div>
-        <a href="adminmenu.php" class="btn btn-primary">Volunteer Today!</a>
+        <a href="admin/login.php" class="btn btn-primary">Volunteer Today!</a>
       </div>
 
       <div class="card mx-3">
@@ -97,12 +96,10 @@
         </div>
         <a href="" class="btn btn-primary">Project Information</a>
       </div>
-    </div>
+</div>
 
-    
-
-    <!--FORM REQUEST-->
-    <div class="container p-5 bg-primary mb-5 w-75 mt-5" id="request">
+<!--FORM REQUEST-->
+<div class="container p-5 bg-primary mb-5 w-75 mt-5" id="request">
       <h1 class="display-2 text-center text-white mt-5 mb-3">Request Garbage Pickup</h1>
       <!-- GUIDELINES -->
       <h2 class="lead text-white mt-5 mb-3">Guidelines:   <br></h2>
@@ -123,7 +120,7 @@
         <br>
 
           <!-- REQUEST FORM -->
-          <form action="process.php" method="post">
+          <form action="form/formprocess.php" method="post">
               <label class="form-label text-white">Full Name:</label>
                 <input type="text" class="form-control mb-3" name="fullname" id="" placeholder="Enter Full Name:" required> 
               <label class="form-label text-white">Address:</label>
@@ -138,6 +135,8 @@
                     <small>Collection dates are closed on Saturday and Sunday.</small>
                   </div> 
 
+            <input type="submit" class="btn btn-primary mb-3" value="Send" name="submit">
+
               <?php
               // UPDATE MESSAGE
                   if(isset($_GET['update_msgform'])){
@@ -151,21 +150,9 @@
                       echo "<h6 class='text-white>".$_GET['error_msgform']."</h6>";
                   }
               ?>
-
-            <input type="submit" class="btn btn-primary mb-3" value="Send" name="submit">
           </form>
         </div>
-                
-        <!-- ADD CONTENT -->
-        <div class="container p-5 mb-5">
-          <h2 class="display-1 text-center mb-5">Additional Content!<br></h2>
-          <p class="lead text-center mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi blanditiis ratione deleniti, nulla laboriosam esse numquam minus sequi error porro voluptas quia inventore vel quos facere, obcaecati natus ipsa fugit?<br></p>
-          <p class="lead text-center mb-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa rerum nobis deserunt natus officia hic magni quo tempore itaque repellat non voluptatem, reprehenderit vitae beatae in minus architecto cum sequi?<br></p>
-        </div>
-    <footer class="bg-primary text-center text-black">
-        
-    </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-</body>       
+<!-- BOOTSTRAP -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script> 
+</body>
 </html>

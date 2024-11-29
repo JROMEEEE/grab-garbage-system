@@ -1,47 +1,48 @@
 * {
-  scroll-behavior: smooth;
-}
-
-body {
-  background-color: #f1faee;
-}
-
-.btn-primary {
-  background-color: #7cb518 !important;
-  border-color: #7cb518 !important;
-}
-
-.btn-primary:hover {
-  color: #f3de2c !important;
-}
-
-.custom-navbar {
-  background-color: #5c8001;
-}
-
-.custom-navbar .navbar-brand {
-  color: #fefee3;
-}
-
-.custom-navbar .navbar-brand:hover {    
-  color: #f3de2c;
-}
-
-.bg-primary {
-  background-color: #538d22 !important;
-}
-
-#services {
-  font-family: 'Arial', serif;
-  font-weight: 700;
-}
-
-.card-title {
-  font-weight: 600;
-}
-
-.card-text {
-  color: #160b0b;
-  line-height: 1.6;
-  font-size: 1.1rem;
-}
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    background-color: #f1faee;
+  }
+  
+  .btn-primary {
+    background-color: #7cb518 !important;
+    border-color: #7cb518 !important;
+  }
+  
+  .btn-primary:hover {
+    color: #f3de2c !important;
+  }
+  
+  .custom-navbar {
+    background-color: #5c8001;
+  }
+  
+  .custom-navbar .navbar-brand {
+    color: #fefee3;
+  }
+  
+  .custom-navbar .navbar-brand:hover {    
+    color: #f3de2c;
+  }
+  
+  .bg-primary {
+    background-color: #538d22 !important;
+  }
+  
+  #services {
+    font-family: 'Arial', serif;
+    font-weight: 700;
+  }
+  
+  .card-title {
+    font-weight: 600;
+  }
+  
+  .card-text {
+    color: #160b0b;
+    line-height: 1.6;
+    font-size: 1.1rem;
+  }
+  
