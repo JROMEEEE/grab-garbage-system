@@ -36,7 +36,7 @@ $adminid = $row['adminid'];
 </head>
 <body>
 
-<nav class="navbar custom-navbar sticky-top">
+<nav class="shadow navbar custom-navbar sticky-top">
     <div class="container-fluid">
         <a class="navbar-brand d-flex align-items-center" href="index.php">
             <img src="../assets/logo.png" width="45" height="45" class="d-inline-block align-middle me-2">
@@ -52,9 +52,9 @@ $adminid = $row['adminid'];
 
 <div class="container p-5 bg-primary mb-5 w-75 mt-5 text-white">
     <h1 class="display-2 text-center mb-5">Change Password</h1>
-    <h2 class="lead mb-3">Username: <?php echo htmlspecialchars($username); ?></h2>
-    <h2 class="lead mb-3">Admin ID: <?php echo htmlspecialchars($adminid); ?></h2>
-    <h2 class="lead mb-3">Email: <?php echo htmlspecialchars($email); ?></h2>
+    <h2 class="lead mb-3">Username: <?php echo $username; ?></h2>
+    <h2 class="lead mb-3">Admin ID: <?php echo $adminid; ?></h2>
+    <h2 class="lead mb-3">Email: <?php echo $email; ?></h2>
     
     <form action="" method="post">
         <input type="password" class="form-control mb-3" name="newpassword" placeholder="Enter new password: " required>
@@ -62,44 +62,44 @@ $adminid = $row['adminid'];
         <input type="submit" class="btn btn-primary" value="Change Password" name="submit">
 
         <?php
-        if (isset($_POST['submit'])) {
-            $new_password = $_POST['newpassword'];
-            $confirm_password = $_POST['confirmpassword'];
-            $username = $_SESSION['username'];
+            if (isset($_POST['submit'])) {
+                $new_password = $_POST['newpassword'];
+                $confirm_password = $_POST['confirmpassword'];
+                $username = $_SESSION['username'];
 
-            // CHECK IF PASSWORD IS MATCHING
-            if ($new_password !== $confirm_password) {
-                header("Location: changepass.php?error_msg=Passwords do not match.");
-                exit;
-            }
+                // CHECK IF PASSWORD IS MATCHING
+                if ($new_password !== $confirm_password) {
+                    header("Location: changepass.php?error_msg=Passwords do not match.");
+                    exit;
+                }
 
-            $hashed_password = password_hash($new_password, PASSWORD_DEFAULT);
+                $hashed_password = password_hash($new_password, PASSWORD_DEFAULT);
 
-            // UPDATE PASSWORD IN DB
-            $query = "UPDATE adminacc_detail SET password = :password WHERE username = :username";
-            $stmt = $connection->prepare($query);
-            $stmt->bindParam(':password', $hashed_password);
-            $stmt->bindParam(':username', $username);
+                // UPDATE PASSWORD IN DB
+                $query = "UPDATE adminacc_detail SET password = :password WHERE username = :username";
+                $stmt = $connection->prepare($query);
+                $stmt->bindParam(':password', $hashed_password);
+                $stmt->bindParam(':username', $username);
 
-            if ($stmt->execute()) {
-                header("Location: changepass.php?update_msg=Password updated successfully. You can now leave this page.");
-            } else {
-                header("Location: changepass.php?error_msg=Error updating password.");
-            }
-        } 
+                if ($stmt->execute()) {
+                    header("Location: changepass.php?update_msg=Password updated successfully. You can now leave this page.");
+                } else {
+                    header("Location: changepass.php?error_msg=Error updating password.");
+                }
+            } 
         ?>
     </form>
     
     <?php
-    if (isset($_GET['update_msg'])) {
-        $update_msg = $_GET['update_msg'];
-        echo "<div class='lead update-message'>" . htmlspecialchars($update_msg) . "</div>";
-    }
+        if (isset($_GET['update_msg'])) {
+            $update_msg = $_GET['update_msg'];
+            echo "<div class='lead update-message'>" . $update_msg . "</div>";
+        }
 
-    if (isset($_GET['error_msg'])) {
-        $error_msg = $_GET['error_msg'];
-        echo "<div class='lead error-message'>" . htmlspecialchars($error_msg) . "</div>";
-    }
+        if (isset($_GET['error_msg'])) {
+            $error_msg = $_GET['error_msg'];
+            echo "<div class='lead error-message'>" . $error_msg . "</div>";
+        }
     ?>   
 </div>
 

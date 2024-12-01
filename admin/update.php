@@ -41,7 +41,7 @@ if (isset($_GET['id'])) {
 </head>
 <body>
 
-<nav class="navbar custom-navbar sticky-top">
+<nav class="shadow navbar custom-navbar sticky-top">
     <div class="container-fluid">
         <a class="navbar-brand d-flex align-items-center" href="index.php">
             <img src="../assets/logo.png" width="45" height="45" class="d-inline-block align-middle me-2">
@@ -49,10 +49,7 @@ if (isset($_GET['id'])) {
         </a>
         <ul class="navbar-nav flex-row flex-wrap bd-navbar-nav">
             <li class="nav-item col-6 col-lg-auto">
-                <a class="navbar-brand d-flex align-items-center" href="../index.php#request">Request Pickup</a>
-            </li>
-            <li class="nav-item col-6 col-lg-auto">
-                <a class="navbar-brand d-flex align-items-center" href="login.php">Volunteer Menu</a>
+                <a class="navbar-brand d-flex align-items-center" href="login.php">Go Back</a>
             </li>
         </ul>
     </div>
