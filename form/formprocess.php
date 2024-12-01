@@ -68,7 +68,6 @@ class Request {
     }
 }
 
-// Create a new Database instance and get the connection
 $database = new Database();
 $connection = $database->getConnect();
 

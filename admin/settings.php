@@ -28,7 +28,7 @@ $username = $_SESSION['username'];
     <title>Account Settings</title>
 </head>
 <body>
-<nav class="navbar custom-navbar sticky-top">
+<nav class="shadow navbar custom-navbar sticky-top">
     <div class="container-fluid">
         <a class="navbar-brand d-flex align-items-center" href="index.php">
             <img src="../assets/logo.png" width="45" height="45" class="d-inline-block align-middle me-2">
