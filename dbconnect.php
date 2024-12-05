@@ -1,7 +1,7 @@
 <?php
 class Database {
     private $host = "localhost";
-    private $db_name = "grabmygarbagedb";
+    private $db_name = "gmgsysdb";
     private $username = "root";
     private $password = "";
     public $conn;

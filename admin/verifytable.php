@@ -35,41 +35,34 @@ $userSession->checkLogin();
                 Grab my Garbage
             </a>
             <ul class="navbar-nav flex-row flex-wrap bd-navbar-nav">
-                <li>    
+                <li>
                     <a class="navbar-brand d-flex align-items-center" href="settings.php">Settings</a>
                 </li>
-                <!-- GO TO VERIFY TABLE -->
                 <li class="nav-item col-6 col-lg-auto">
-                    <a class="navbar-brand d-flex align-items-center" href="verifytable.php">Verify List</a>
-                </li>
-                <li class="nav-item col-6 col-lg-auto">
-                    <a class="navbar-brand d-flex align-items-center" href="../index.php">Go Back</a>
+                    <a class="navbar-brand d-flex align-items-center" href="adminmenu.php">Go Back</a>
                 </li>
             </ul>
         </div>
     </nav>
 
     <div class="container-fluid p-5 justify-content-center w-100">
-        <h1 class="display-4 text-center mb-4">Request List</h1>
-        <a class="btn btn-primary mb-3" href="../index.php#request">Add Request</a>
+        <h1 class="display-4 text-center mb-4">Collection Data</h1>
         <table id="datatableid" class="table table-hover table-bordered">
             <thead>
                 <tr class="text-center">
-                    <th>ID</th>
-                    <th>Full Name</th>
-                    <th>Address</th>
-                    <th>Phone Number</th>
-                    <th>Garbage Type</th>
+                    <th>Collection ID</th>
+                    <th>Request ID</th>
+                    <th>Weight</th>
+                    <th>Notes</th>
                     <th>Collection Date</th>
-                    <th>Update</th>
-                    <th>Verify</th>
+                    <th>Verifier</th> <!-- Added Username column -->
                     <th>Delete</th>
                 </tr>
             </thead>
             <tbody>
                 <?php
-                // FETCH USER DATA
-                $query = 'SELECT * FROM user_detail';
+                // FETCH DATA FROM collection_data TABLE
+                $query = 'SELECT * FROM collection_data';
                 $stmt = $connection->prepare($query);
                 $stmt->execute();
 
@@ -79,15 +72,13 @@ $userSession->checkLogin();
                 foreach ($results as $row) {
                     ?>
                     <tr class="text-center">
+                        <td><?php echo $row['collectionid']; ?></td>
                         <td><?php echo $row['request_id']; ?></td>
-                        <td><?php echo $row['user_fullname']; ?></td>
-                        <td><?php echo $row['user_address']; ?></td>
-                        <td><?php echo $row['user_phonenumber']; ?></td>
-                        <td><?php echo $row['garbage_type']; ?></td>
-                        <td><?php echo $row['request_date']; ?></td>
-                        <td><a class="btn btn-warning" href="update.php?id=<?php echo $row['request_id']; ?>">Update</a></td>
-                        <td><a class="btn btn-success" href="verify.php?id=<?php echo $row['request_id']; ?>">Verify</a></td>
-                        <td><a class="btn btn-danger" href="delete.php?id=<?php echo $row['request_id']; ?>">Delete</a></td>
+                        <td><?php echo $row['weight']; ?></td>
+                        <td><?php echo $row['notes']; ?></td>
+                        <td><?php echo $row['collection_date']; ?></td>
+                        <td><?php echo $row['username']; ?></td>
+                        <td><a class="btn btn-danger" href="verifydelete.php?id=<?php echo $row['collectionid']; ?>">Delete</a></td>
                     </tr>
                     <?php
                 }
@@ -108,12 +99,13 @@ $userSession->checkLogin();
         ?>
 
         <!-- GO BACK TO MENU -->
-        <form action="../index.php" method="post">
+        <form action="adminmenu.php" method="post">
             <div class="container text-center mt-4">
-                <button type="submit" class="btn btn-primary">Redirect to Menu</button>
+                <button type="submit" class="btn btn-primary">Redirect to Dashboard</button>
             </div>  
         </form>
     </div>
+    
 <!-- DATATABLE SCRIPT -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384 -MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
@@ -126,4 +118,4 @@ $userSession->checkLogin();
     });
 </script>
 </body>
-</html
+</html>
