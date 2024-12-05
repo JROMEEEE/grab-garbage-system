@@ -26,10 +26,12 @@ $db = new Database();
 $connection = $db->getConnect();
 
 if (isset($_POST['submit'])) {
+    // GET DETAILS
     $username = $_POST['username'];
     $password = $_POST['password'];
     $admincode = $_POST['admincode'];
 
+    // CHECK IF CREDS ARE CORRECT
     $sqlquery = "SELECT * FROM adminacc_detail WHERE username = :username AND admincode = :admincode";
     $stmt = $connection->prepare($sqlquery);
     $stmt->bindParam(':username', $username);

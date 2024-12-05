@@ -46,12 +46,13 @@ $username = $_SESSION['username'];
     <h1 class="display-3 text-center text-white mb-5">Account Settings</h1>
 
     <?php
-    // Now using the username from the session
+    // GET ADMIN ACCOUNT DETAILS
     $query = 'SELECT username, email, adminid FROM adminacc_detail WHERE username = :username';
     $stmt = $connection->prepare($query);
     $stmt->bindParam(':username', $username);
     $stmt->execute();
 
+    // DISPLAY ADMIN ACCOUNT DETAILS
     if ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
         echo '<p class="lead text-white">Admin ID: ' . htmlspecialchars($row['adminid']) . '</p>';
         echo '<p class="lead text-white">Username: ' . htmlspecialchars($row['username']) . '</p>';

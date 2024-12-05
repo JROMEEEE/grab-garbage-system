@@ -13,7 +13,7 @@ $userSession = new UserSession($connection);
 // CHECK IF USER IS LOGGED IN
 $userSession->checkLogin();
 
-// Update DB function
+// UPDATE DB
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
 
@@ -57,7 +57,8 @@ if (isset($_GET['id'])) {
 
 <div class="container p-5 mb-5">
     <h1 class="display-4 text-center mb-4">Edit Request</h1>
-    <?php 
+    <?php
+
     if (isset($_POST['update_request'])) {
         $fullname = $_POST['fullname'];
         $address = $_POST['address'];
@@ -76,7 +77,7 @@ if (isset($_GET['id'])) {
 
         if ($stmt->execute()) {
             header('Location: adminmenu.php?update_msg=Successfully Updated');
-            exit; // Always good practice to exit after a header redirect
+            exit;
         } else {
             die("Query failed: " . implode(", ", $stmt->errorInfo()));
         }
