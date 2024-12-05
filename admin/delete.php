@@ -1,23 +1,23 @@
 <?php
 require_once('../dbconnect.php');
 
-// Create a new Database instance and get the connection
+// CREATE NEW INSTANCE TO GET CONNECTION
 $db = new Database();
 $connection = $db->getConnect();
 
-// Delete DB function
+// DELETE DB
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
 
-    // Prepare the DELETE query
+    // DELETE QUERY
     $query = "DELETE FROM user_detail WHERE request_id = :id";
     $stmt = $connection->prepare($query);
     $stmt->bindParam(':id', $id);
 
-    // Execute the query and check for success
+    // EXECUTE QUERY
     if ($stmt->execute()) {
         header('Location: adminmenu.php?delete_msg=Request Deleted!');
-        exit; // Always good practice to exit after a header redirect
+        exit;
     } else {
         die("Query failed: " . implode(", ", $stmt->errorInfo()));
     }

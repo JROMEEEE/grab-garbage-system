@@ -24,13 +24,13 @@ if (isset($_POST["submit"])) {
         exit;
     }
 
-    // Check if username already exists
+    // GET DB TO CHECK IF USERNAME EXISTS
     $query = "SELECT * FROM adminacc_detail WHERE username = :username";
     $stmt = $connection->prepare($query);
     $stmt->bindParam(':username', $username);
     $stmt->execute();
 
-    // CHECK USERNAME IF IT EXISTS
+    // IF ROW < 0 THEN USERNAME DOES NOT EXIST
     if ($stmt->rowCount() > 0) { // CHECK IF ROWS RETURNED ARE GREATER THAN 0
         header('Location: register.php?error_msgform=Username already exists please choose another one.');
         exit;

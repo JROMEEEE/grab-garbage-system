@@ -147,16 +147,17 @@
               <?php
               // ERROR MESSAGE
                   if(isset($_GET['error_msgform'])){
-                      echo "<h6 class='text-white>".$_GET['error_msgform']."</h6>";
+                      echo "<h6 class='text-white'>".$_GET['error_msgform']."</h6>";
                   }
               ?>
           </form>
         </div>
 
-        <!-- ADD CONTENT -->
+        <!-- SDG 11 -->
         <div class="shadow container bg-primary mb-5 mt-5" id="additional-content">
           <div id= "additional-content" class="container p-5 mb-5">
             <h2 class="display-1 text-center text-white mb-5"> Our Mission <br></h2>
+            <p class="lead text-center lead text-white mb-4">SDG-11 refers to "Sustainable Cities and Communities", one of the 17 Sustainable Development Goals (SDGs) set by the United Nations. The goal aims to make cities inclusive, safe, resilient, and sustainable by addressing issues such as urban planning, public health, environmental sustainability, and infrastructure.</p>
             <p class="lead text-center lead text-white mb-4"> In our community, garbage collectors often face challenges with timely waste collection due to accessibility issues. When garbage accumulates on the roads, it becomes difficult for trucks to navigate and collect waste efficiently, leading to delays, unsanitary conditions, and a negative impact on the environment and public health. </p>
             <p class="lead text-center lead text-white mb-4"> To address this, our team developed an innovative system that allows users to schedule pickups and input their location directly into our platform. This feature provides garbage collectors with a clear, updated guide on where and when to collect waste, streamlining the process and ensuring timely pickup. </p>
             <p class="lead text-center lead text-white mb-4"> By improving route efficiency and communication, our system helps keep streets clean, enhances community hygiene, and reduces the likelihood of garbage piling up in public spaces.Our goal is to make waste collection more accessible, organized, and sustainable for everyone in the community.<br></p>
@@ -244,7 +245,7 @@
       </div>
     </div>
 
-      </div>
+    </div>
 
 <!-- BOOTSTRAP -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script> 

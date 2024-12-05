@@ -52,7 +52,7 @@ $username = $_SESSION['username'];
             $admincode = $_POST['admincode'];
             $password = $_POST['password'];
         
-            // Check if the new username already exists
+            // CHECK IF NEW USERNAME EXISTS
             $query = "SELECT * FROM adminacc_detail WHERE username = :new_username";
             $stmt = $connection->prepare($query);
             $stmt->bindParam(':new_username', $new_username);
@@ -62,7 +62,7 @@ $username = $_SESSION['username'];
                 header('Location: update_user.php?error_msg=Username already exists');
                 exit;
             } else {
-                // Check if the admin code and password match the ones in the database
+                // COMPARE PASSWORD
                 $query = "SELECT * FROM adminacc_detail WHERE username = :username AND admincode = :admincode";
                 $stmt = $connection->prepare($query);
                 $stmt->bindParam(':username', $username);
@@ -73,14 +73,14 @@ $username = $_SESSION['username'];
                     $user = $stmt->fetch(PDO::FETCH_ASSOC);
         
                     if (password_verify($password, $user['password'])) {
-                        // Update the username in the database
+                        // UPDATE USERNAME IN DB
                         $query = "UPDATE adminacc_detail SET username = :new_username WHERE username = :username";
                         $stmt = $connection->prepare($query);
                         $stmt->bindParam(':new_username', $new_username);
                         $stmt->bindParam(':username', $username);
         
                         if ($stmt->execute()) {
-                            // Update the session variable with the new username
+                            // UPDATE SESSION W/ NEW USERNAME
                             $_SESSION['username'] = $new_username;
                             header('Location: updateusername.php?update_msg=Username updated successfully');
                             exit;
