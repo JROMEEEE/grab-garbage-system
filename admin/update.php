@@ -84,7 +84,7 @@ if (isset($_GET['id'])) {
     }
     ?>
 
-    <!-- Update Form w/ set placeholder-->
+    <!-- UPDATE FORM w/ PLACEHOLDER -->
     <form action="update.php?id=<?php echo htmlspecialchars($id); ?>" method="post">
         <h3 class="lead">Request ID: <?php echo htmlspecialchars($row['request_id']); ?></h3>
         <br>
